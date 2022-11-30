@@ -63,6 +63,7 @@ def main():
     ax0.set_xlim(x_range)
     ax0.xaxis.set_major_formatter(formatter)
     ax0.legend()
+    ax0.set(xlabel="Lap Time", title="Best Lap Times")
     
     # Define plot groups
     top_teams = ["Red Bull Racing", "Ferrari", "Mercedes"]
