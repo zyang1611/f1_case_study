@@ -129,7 +129,7 @@ def get_race_runs(lap_times):
     rr_times = pd.merge(race_runs.loc[:, ["Driver", "Stint", "LapTime_std"]], lap_times.loc[:, ["Driver", "Team", "Stint", "LapTime", "TyreLife", "Compound"]], how="inner", on=["Driver", "Stint"])
     
     # Filter outliers 
-    rr_times = rr_times[rr_times.LapTime-rr_times.LapTime.mean() <= 0.5*rr_times.LapTime.std()]
+    rr_times = rr_times[rr_times.LapTime-rr_times.LapTime.mean() <= 0.25*rr_times.LapTime.std()]
     
     return rr_times
 
