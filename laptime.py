@@ -128,10 +128,9 @@ def get_race_runs(lap_times):
     stints2 = lap_times.loc[:, ["Driver", "Stint", "LapTime"]]
     laps_std = stints2.groupby(["Driver", "Stint"]).std(numeric_only=True)
     race_runs = laps_std.loc[lambda sel: sel.LapTime < 17].reset_index()
-    race_runs.rename(columns={"LapTime": "LapTime_std"}, inplace=True)
     
     # Create race run times table with laptimes for each lap in the chosen stints
-    rr_times = pd.merge(race_runs.loc[:, ["Driver", "Stint", "LapTime_std"]], lap_times.loc[:, ["Driver", "Team", "Stint", "LapTime", "TyreLife", "Compound"]], how="inner", on=["Driver", "Stint"])
+    rr_times = pd.merge(race_runs.loc[:, ["Driver", "Stint"]], lap_times.loc[:, ["Driver", "Team", "Stint", "LapTime", "TyreLife", "Compound"]], how="inner", on=["Driver", "Stint"])
     
     # Filter outliers 
     rr_times = rr_times[rr_times.LapTime-rr_times.LapTime.mean() <= 0.25*rr_times.LapTime.std()]
