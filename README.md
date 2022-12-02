@@ -9,7 +9,7 @@ During practice, teams will normally conduct test laps to simulate car qualifyin
 
 The objective of this script is to plot and compare qualifying and race simulation lap times for drivers from top, mid and bottom teams for any past race and also for future races when practice session lap times become available.
 By plotting this info, the goal is to find out which car has the best set up or has dynamics that particularly suited to a specific track and hopefully predict if that car will perform better than its direct rivals. Very useful if you are playing F1 Fantasy!
-Some examples below. 
+Some examples below..
 
 ![best times](/data/2022/Abu%20Dhabi/FP2/best_times.jpg "Best Times")
 ![top teams](/data/2022/Abu%20Dhabi/FP2/top.jpg "Top Teams")
