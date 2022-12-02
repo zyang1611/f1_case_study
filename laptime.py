@@ -108,15 +108,15 @@ def main():
     # Save figures
     fig0.savefig(os.path.join(path, "best_times.jpg"), dpi=300)
     if ax1:
-        ax1.set(title="Top Teams")
+        ax1.set(title="Top Teams - Race Simulation Times")
         plot_formatter(formatter, ax1)
         fig1.savefig(os.path.join(path, "top.jpg"), dpi=300)
     if ax2:
-        ax2.set(title="Mid Teams")
+        ax2.set(title="Mid Teams - Race Simulation Times")
         plot_formatter(formatter, ax2)
         fig2.savefig(os.path.join(path, "mid.jpg"), dpi=300)
     if ax3:
-        ax3.set(title="Bottom Teams")
+        ax3.set(title="Bottom Teams - Race Simulation Times")
         plot_formatter(formatter, ax3)
         fig3.savefig(os.path.join(path, "bottom.jpg"), dpi=300)
     
