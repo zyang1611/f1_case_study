@@ -11,7 +11,7 @@ The objective of this script is to plot and compare qualifying and race simulati
 By plotting this info, the goal is to find out which car has the best set up or has dynamics that particularly suited to a specific track and hopefully predict if that car will perform better than its direct rivals. Very useful if you are playing F1 Fantasy!
 Some examples below...
 
-![best times](/data/2022/Abu%20Dhabi/FP2/best_times.jpg "Best Times")
+![best times](/data/2022/Abu%20Dhabi/FP2/best_times.jpg "Best Lap Times")
 ![top teams](/data/2022/Abu%20Dhabi/FP2/top.jpg "Top Teams")
 ![mid teams](/data/2022/Abu%20Dhabi/FP2/mid.jpg "Mid Teams")
 ![bottom teams](/data/2022/Abu%20Dhabi/FP2/bottom.jpg "Bottom Teams")
