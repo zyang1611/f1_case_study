@@ -3,6 +3,7 @@ import fastf1
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from cycler import cycler
 
 def main():
     """
@@ -82,7 +83,10 @@ def main():
     if any([x in mid_teams for x in teams_with_time]):
         fig2, ax2 = plt.subplots(figsize=(10, 8.5))
     
-    # Plot each stint 
+    # Plot each stint
+    cc = (cycler(marker=list("xov")) * cycler(color=list("bgrcymk")))
+    [x.set_prop_cycle(cc) for x in [ax1, ax2, ax3]]
+    
     stints_with_time = rr_times.loc[:, ["Driver" , "Stint"]]
     stints_index = stints_with_time.drop_duplicates().itertuples(index=False)
     for x in stints_index:
@@ -90,17 +94,18 @@ def main():
         stint = int(x[1])
         driver_times = rr_times[(rr_times.Driver == driver) & (rr_times.Stint == stint)]
         if driver_times.Team.iloc[0] in top_teams:
-            ax1.plot(driver_times.TyreLife, driver_times.LapTime, label=(driver, driver_times.Compound.iloc[0]), marker="x", linewidth=2)
+            ax1.plot(driver_times.TyreLife, driver_times.LapTime, label=(driver, driver_times.Compound.iloc[0]), linewidth=2)
         elif driver_times.Team.iloc[0] in mid_teams:
-            ax2.plot(driver_times.TyreLife, driver_times.LapTime, label=(driver, driver_times.Compound.iloc[0]), marker="x", linewidth=2)
+            ax2.plot(driver_times.TyreLife, driver_times.LapTime, label=(driver, driver_times.Compound.iloc[0]), linewidth=2)
         else:
-            ax3.plot(driver_times.TyreLife, driver_times.LapTime, label=(driver, driver_times.Compound.iloc[0]), marker="x", linewidth=2)
+            ax3.plot(driver_times.TyreLife, driver_times.LapTime, label=(driver, driver_times.Compound.iloc[0]), linewidth=2)
             
     # Format axes and save plots
     path = os.path.join("data", str(this_year), str(this_race), str(this_session))
     if not os.path.exists(path):
         os.makedirs(path)
-        
+    
+    # Save figures
     fig0.savefig(os.path.join(path, "best_times.jpg"), dpi=300)
     if ax1:
         ax1.set(title="Top Teams")
