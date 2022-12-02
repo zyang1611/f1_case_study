@@ -24,7 +24,7 @@ Below is a rough outline of the data processing steps used.
 1. Filter out outlaps(exiting pits) and inlaps(entering pits).
 2. Slice DataFrame to select only required columns.
 3. Convert recorded lap time from a pd.timedelta to seconds for analysis.
-4. Select the fastest posted by each driver, this is each driver's qualifying simulation time. 
+4. Select the fastest lap recorded by each driver, this is his qualifying simulation time. 
 5. Calculate standard deviation for each recorded stint and select stints with st.dev <17s. This represents the race simulation stints where drivers record a few consecutive laps with very similar times. 
 6. Filter outlier laps from the selected stints. 
 7. The results are then plotted as shown using matplotlib. 
