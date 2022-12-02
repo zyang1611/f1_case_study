@@ -49,8 +49,8 @@ def main():
     
     # Plot on a horizontal bar plot
     y_pos = np.arange(len(best_times))
-    p1 = ax0.barh(y_pos, best_times.Best_RR, label="Race")
-    p2 = ax0.barh(y_pos, best_times.Best_Q, label="Qualifying")
+    p1 = ax0.barh(y_pos, best_times.Best_RR, label="Race Sim")
+    p2 = ax0.barh(y_pos, best_times.Best_Q, label="Qualifying Sim")
     ax0.set_yticks(y_pos, labels=best_times.index)
     ax0.invert_yaxis()
     ax0.yaxis.set_major_locator(plt.MultipleLocator(base=1))
@@ -64,7 +64,7 @@ def main():
     ax0.set_xlim(x_range)
     ax0.xaxis.set_major_formatter(formatter)
     ax0.legend()
-    ax0.set(xlabel="Lap Time", title="Best Lap Times")
+    ax0.set(xlabel="Lap Time", title="Best Practice Lap Times")
     
     # Define plot groups
     top_teams = ["Red Bull Racing", "Ferrari", "Mercedes"]
