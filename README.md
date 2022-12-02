@@ -31,5 +31,5 @@ Below is a rough outline of the data processing steps used.
 
 #### **Further Improvement**
 This is a work in progress. Next steps will be:
-- To link the output data from this script to Tableau dashboard.
+- To link the output data from this script to a Tableau dashboard.
 - To implement an SVM classifier to select race simulation times and see if improvements to accuracy can be made.
